@@ -1,4 +1,4 @@
-# Terraform + GitHub Style Layout for Cost-Optimized Cosmos DB Archival
+# Layout for Cost-Optimized Cosmos DB Archival using terraform
 
 ## 📁 Project Structure
 ```
