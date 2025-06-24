@@ -1,5 +1,26 @@
 # Layout for Cost-Optimized Cosmos DB Archival using terraform
 
+
+                                  +---------------------------+
+                                  |        Frontend/API       |
+                                  +-------------+-------------+
+                                                |
+                        +-----------------------v------------------------+
+                        |         Azure Function (Read Proxy)            |
+                        |   (GET /billing/{id} → Cosmos → Blob fallback) |
+                        +----------------+-------------------------------+
+                                         |                               
+        +-------------------------------v-------------+   +---------------------------+
+        |        Cosmos DB (Recent, Hot/Warm)         |   |     Blob Storage (Cold)   |
+        |     (≤ 3 months, fast reads, < 80 GB)       |   | (archived billing records)|
+        +---------------------------------------------+   +---------------------------+
+
+
+
+
+
+
+
 ## 📁 Project Structure
 ```
 .
